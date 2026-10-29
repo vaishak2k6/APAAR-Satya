@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { CalendarClock, Download, ShieldAlert } from "lucide-react";
 import { Badge, Button, Callout, Meter, PageHeader, Panel, ScoreChip, StatStrip, Table, TD, TH } from "@/components/ui/primitives";
 import { SeatLedgerTable } from "@/components/seat-ledger";
-import { institutionById, REASONS, SEAT_LEDGER } from "@/lib/data";
+import { institutionById, INSTITUTIONS, REASONS, SEAT_LEDGER } from "@/lib/data";
 import { pct, ratio, riskTone, submissionTone } from "@/lib/format";
 
 const TIMELINE = [
@@ -19,6 +19,11 @@ const SCORE_BUCKETS = [
   { label: "50–79", n: 28, tone: "warning" as const },
   { label: "0–49", n: 6, tone: "danger" as const },
 ];
+
+// Pre-render every demo institution so the static GitHub Pages build has a page for each.
+export function generateStaticParams() {
+  return INSTITUTIONS.map((i) => ({ id: i.id }));
+}
 
 export default async function InstitutionDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

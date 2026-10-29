@@ -461,9 +461,14 @@ for i, f in enumerate(["overview.jpg", "upload.jpg", "institution.jpg", "verify.
     framed_pic(s6, os.path.join(SHOTS, f), 0.3 + i * 2.42, 5.25, 2.3, 1.45)
 box(s6, 10.15, 5.18, 2.9, 1.6, gradient=GREEN[:2], line=GREEN[2], kind=MSO_SHAPE.OVAL, shade=True)
 REPO_URL = "https://github.com/vaishak2k6/APAAR-Satya"
-links = text(s6, 10.25, 5.28, 2.7, 1.4, [[("Link:", {})], [("[add deployed link]", {"color": "1F4E79"})],
+DEMO_URL = "https://vaishak2k6.github.io/APAAR-Satya/"
+links = text(s6, 10.25, 5.28, 2.7, 1.4, [[("Link:", {})], [("vaishak2k6.github.io/APAAR-Satya", {"color": "1F4E79", "size": 10.5})],
                                          [("GitHub link:", {})], [("github.com/vaishak2k6/APAAR-Satya", {"color": "1F4E79", "size": 10.5})]],
              size=13, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+demo_run = links.text_frame.paragraphs[1].runs[0]
+demo_run.hyperlink.address = DEMO_URL
+demo_run.font.underline = True
+demo_run.font.color.rgb = rgb("1F4E79")
 repo_run = links.text_frame.paragraphs[3].runs[0]
 repo_run.hyperlink.address = REPO_URL
 repo_run.font.underline = True

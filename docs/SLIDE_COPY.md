@@ -100,4 +100,4 @@ References [1]–[6] in coloured rows (PIB APAAR note 2026, Fellegi–Sunter 196
 - EXPLAINABLE FLAGS: every flag shows its reason for officer review.
 - PROTOTYPE READY: dashboards and checks shown on synthetic data.
 
-Bottom: 4 app screenshots + green oval with the demo link (fill in) and GitHub link: https://github.com/vaishak2k6/APAAR-Satya
+Bottom: 4 app screenshots + green oval with the demo link (https://vaishak2k6.github.io/APAAR-Satya/) and GitHub link (https://github.com/vaishak2k6/APAAR-Satya)

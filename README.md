@@ -5,6 +5,8 @@ Smart India Hackathon 2026 · Team Resilience.
 
 > A student counts only when three independent sources agree.
 
+**Live demo:** https://vaishak2k6.github.io/APAAR-Satya/ (static build of `frontend/`, synthetic data; any sign-in works)
+
 ## Repository layout
 
 | Path | What it is |
@@ -34,6 +36,23 @@ python -m pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --port 8000
 python -m pytest -q
 ```
+
+### Update the live demo
+
+The demo is served by GitHub Pages from the `gh-pages` branch. After changing the frontend:
+
+```bash
+cd frontend
+npm run build:pages
+```
+
+That writes a static site to `frontend/out/` with the `/APAAR-Satya` base path. Publish it:
+
+```bash
+cd frontend/out && touch .nojekyll && git init -q -b gh-pages && git add -A && git commit -q -m "Update demo" && git push -f https://github.com/vaishak2k6/APAAR-Satya.git gh-pages
+```
+
+Then delete the temporary repo with `rm -rf .git` (run it inside `frontend/out`).
 
 ## Screens
 
